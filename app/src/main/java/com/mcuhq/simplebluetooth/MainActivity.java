@@ -23,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -72,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
         mOffBtn = (Button)findViewById(R.id.off);
         mDiscoverBtn = (Button)findViewById(R.id.discover);
         mListPairedDevicesBtn = (Button)findViewById(R.id.paired_btn);
-        mLED1 = (CheckBox)findViewById(R.id.checkbox_led_1);
+        //mLED1 = (CheckBox)findViewById(R.id.checkbox_led_1);
+        RadioGroup mRadioGroup = (RadioGroup) findViewById(R.id.radioGroupColor);
 
         mBTArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
         mBTAdapter = BluetoothAdapter.getDefaultAdapter(); // get a handle on the bluetooth radio
@@ -115,13 +117,16 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
 
-            mLED1.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("1");
-                }
-            });
+//            mLED1.setOnClickListener(new View.OnClickListener(){
+//                @Override
+//                public void onClick(View v){
+//                    if(mConnectedThread != null) //First check to make sure thread created
+//                        if(((CheckBox)v).isChecked())
+//                            mConnectedThread.write("1");
+//                        else
+//                            mConnectedThread.write("0");
+//                }
+//            });
 
 
             mScanBtn.setOnClickListener(new View.OnClickListener() {
@@ -149,6 +154,31 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v){
                     discover();
+                }
+            });
+
+            mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+            {
+                @Override
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    // checkedId is the RadioButton selected
+                    if(mConnectedThread != null){ //First check to make sure thread created
+                        switch (checkedId){
+                            case R.id.radioButtonRed:
+                                mConnectedThread.write("1");
+                                break;
+                            case R.id.radioButtonGreen:
+                                mConnectedThread.write("2");
+                                break;
+                            case R.id.radioButtonBlue:
+                                mConnectedThread.write("3");
+                                break;
+                            case R.id.radioButtonOff:
+                                mConnectedThread.write("0");
+                                break;
+
+                        }
+                    }
                 }
             });
         }
@@ -300,4 +330,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return  device.createRfcommSocketToServiceRecord(BT_MODULE_UUID);
     }
+
 }

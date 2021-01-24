@@ -29,7 +29,7 @@
                 android:layout_weight="1"
                 android:buttonTint="@android:color/holo_red_dark"
                 android:fadeScrollbars="true"
-                android:text="@string/red" />
+                android:text="Red" />
 
             <RadioButton
                 android:id="@+id/radioButtonGreen"
@@ -37,7 +37,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:buttonTint="@android:color/holo_green_dark"
-                android:text="@string/green" />
+                android:text="Green" />
 
             <RadioButton
                 android:id="@+id/radioButtonBlue"
@@ -45,7 +45,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:buttonTint="@android:color/holo_blue_dark"
-                android:text="@string/blue" />
+                android:text="Blue" />
 
             <RadioButton
                 android:id="@+id/radioButtonOff"
@@ -54,7 +54,7 @@
                 android:layout_weight="1"
                 android:buttonTint="@android:color/black"
                 android:checked="true"
-                android:text="@string/off" />
+                android:text="Off" />
         </RadioGroup>
 
     </LinearLayout>

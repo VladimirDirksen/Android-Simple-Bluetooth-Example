@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Color changer</string>
+    <string name="rx">RX:</string>
+    <string name="lt_read_buffer"><![CDATA[<Read Buffer>]]></string>
+    <string name="status">Status:</string>
+    <string name="lt_bluetooth_status"><![CDATA[<Bluetooth Status>]]></string>
+    <string name="bluetooth_on">Bluetooth ON</string>
+    <string name="bluetooth_off">Bluetooth OFF</string>
+    <string name="show_paired_devices">Show paired Devices</string>
+    <string name="discover_new_devices">Discover New Devices</string>
+    <string name="green">Green</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="off">Off</string>
 </resources>

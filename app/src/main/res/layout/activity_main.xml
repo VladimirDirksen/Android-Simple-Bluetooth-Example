@@ -48,6 +48,14 @@
                 android:text="@string/blue" />
 
             <RadioButton
+                android:id="@+id/radioButtonYellow"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:buttonTint="@android:color/holo_orange_light"
+                android:text="@string/yellow" />
+
+            <RadioButton
                 android:id="@+id/radioButtonOff"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

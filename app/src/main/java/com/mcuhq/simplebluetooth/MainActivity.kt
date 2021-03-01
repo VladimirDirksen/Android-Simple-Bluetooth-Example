@@ -141,6 +141,7 @@ class MainActivity : AppCompatActivity() {
                         R.id.radioButtonRed -> color = "1"
                         R.id.radioButtonGreen -> color = "2"
                         R.id.radioButtonBlue -> color = "3"
+                        R.id.radioButtonYellow -> color = "4"
                         R.id.radioButtonOff -> {
                             color = "0"
                             count1 = 0;
